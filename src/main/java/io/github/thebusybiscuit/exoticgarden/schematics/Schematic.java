@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.logging.Level;
 
+import io.github.thebusybiscuit.exoticgarden.utils.Utils;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -21,8 +22,6 @@ import io.github.thebusybiscuit.exoticgarden.schematics.org.jnbt.NBTInputStream;
 import io.github.thebusybiscuit.exoticgarden.schematics.org.jnbt.ShortTag;
 import io.github.thebusybiscuit.exoticgarden.schematics.org.jnbt.Tag;
 import io.github.thebusybiscuit.slimefun4.utils.tags.SlimefunTag;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.skins.PlayerHead;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.skins.PlayerSkin;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 
 /*
@@ -154,7 +153,7 @@ public class Schematic {
                                 s.setRotation(faces[ThreadLocalRandom.current().nextInt(faces.length)]);
                                 block.setBlockData(s);
 
-                                PlayerHead.setSkin(block, PlayerSkin.fromHashCode(tree.getTexture()), true);
+                                Utils.applySkinToExistingSkull(block, tree.getTexture());
                                 BlockStorage.store(block, tree.getFruit());
                             }
                         }
