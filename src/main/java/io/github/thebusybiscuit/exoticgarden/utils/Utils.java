@@ -23,9 +23,9 @@ public class Utils {
         ItemStack head = new ItemStack(Material.PLAYER_HEAD);
         SkullMeta meta = (SkullMeta) head.getItemMeta();
 
-        PlayerProfile profile = Bukkit.createPlayerProfile(UUID.randomUUID(), null);
+        UUID profileId = UUID.nameUUIDFromBytes(hash.getBytes());
+        PlayerProfile profile = Bukkit.createPlayerProfile(profileId, null);
         PlayerTextures textures = profile.getTextures();
-
 
         try {
             textures.setSkin(URI.create("http://textures.minecraft.net/texture/" + hash).toURL());

@@ -238,7 +238,7 @@ public class ExoticGarden extends JavaPlugin implements SlimefunAddon {
         items.put("MELON_SEEDS", new ItemStack(Material.MELON_SEEDS));
 
         for (Material sapling : Tag.SAPLINGS.getValues()) {
-            items.put(sapling.name(), new ItemStack(sapling));
+            items.put("VANILLA_" + sapling.name(), new ItemStack(sapling));
         }
 
         items.put("GRASS_SEEDS", grassSeeds.item().clone());
